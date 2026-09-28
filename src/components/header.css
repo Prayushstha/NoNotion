@@ -1,0 +1,135 @@
+.dashboard-header {
+    display: flex;
+    position: sticky;
+    margin-top: 0;
+    height: 30px;
+    align-items: center;
+    background-color: var();
+    color: var(--color-primary);
+    font: var(--font-heading);
+    width: 100%;
+}
+
+.tool-bar {
+    display: flex;
+    margin-right: 5px;
+    justify-self: flex-start;
+    align-items: center;
+    width: 20%;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.tool {
+    margin-right: 15px;
+}
+
+.header-right {
+    display: flex;
+    color: var(--primary);
+    position: inherit;
+    left: 95%;
+}
+/* Sidebar Toggle */
+/* From Uiverse.io by vinodjangid07 */ 
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  gap: 5px;
+  transition-duration: .5s;
+}
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: var(--sidebar-button-secondary-text);
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: .8s;
+}
+
+#bar1,#bar3 {
+  width: 70%;
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: .5s;
+  transform: rotate(180deg);
+}
+
+/* Switch */
+.switch {
+  --a: 0.5s ease-out;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  height: 10px;
+  align-self: center;
+  border-radius: 2em;
+  box-shadow: 0 0 0 0.33em #aaa;
+  aspect-ratio: 212.4992/84.4688;
+  background-color: #aaa;
+}
+
+/* Hide default HTML checkbox */
+#check {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch svg {
+  height: 100%;
+}
+
+.switch svg path {
+  color: #fff;
+  stroke-width: 16;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 136 224;
+  transition:
+    all var(--a),
+    0s transform;
+  transform-origin: center;
+}
+
+#check:checked ~ .switch svg path {
+  stroke-dashoffset: 180;
+  transform: scaleY(-1);
+}

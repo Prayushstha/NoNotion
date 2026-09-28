@@ -1,0 +1,73 @@
+:root {
+  --background-primary: #e9e4d8;
+  --background-secondary: #f4efe4;
+  --background-tertiary: #e6e4d7;
+  --background-sidebar: #e3ddcf;
+
+  --color-primary: #1e1e1e;
+  --color-secondary: #2e2e2e;
+  --color-muted: #5e5a52;
+
+  --border-color: #d2cbbb;
+  --border-focus: #2e2e2e;
+
+  --button-primary: #2e2e2e;
+  --button-primary-text: #e6e4d7;
+  --button-secondary: #d8d2c4;
+  --button-secondary-text: #2e2e2e;
+
+  --sidebar-color-primary: #1e1e1e;
+  --sidebar-button-primary: #2e2e2e;
+  --sidebar-button-primary-text: #e6e4d7;
+  --sidebar-button-secondary: #e6e4d7;
+  --sidebar-button-secondary-text: #2e2e2e;
+  --sidebar-border-color: #d2cbbb;
+  --sidebar-border-focus: #2e2e2e;
+
+  --chart-1: #f26a4b;
+  --chart-2: #1e1e1e;
+  --chart-3: #5e5a52;
+  --chart-4: #a89f8f;
+  --chart-5: #cfc8b8;
+
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Playfair Display", serif;
+  --font-code: "JetBrains Mono", monospace;
+  --text-letter-spacing: 0.01em;
+
+  --border-radius: 0.5rem;
+  --base-spacing: 0.25rem;
+}
+
+html[data-theme="dark"] {
+  --background-primary: #141414;
+  --background-secondary: #1c1c1c;
+  --background-tertiary: #363636;
+  --background-sidebar: #101010;
+
+  --color-primary: #e8e3da;
+  --color-secondary: #d1cfc0;
+  --color-muted: #8e8a83;
+
+  --border-color: #2c2c2c;
+  --border-focus: #d1cfc0;
+
+  --button-primary: #d1cfc0;
+  --button-primary-text: #363636;
+  --button-secondary: #222222;
+  --button-secondary-text: #d1cfc0;
+
+  --sidebar-color-primary: #e8e3da;
+  --sidebar-button-primary: #d1cfc0;
+  --sidebar-button-primary-text: #363636;
+  --sidebar-button-secondary: #363636;
+  --sidebar-button-secondary-text: #d1cfc0;
+  --sidebar-border-color: #2c2c2c;
+  --sidebar-border-focus: #d1cfc0;
+
+  --chart-1: #f26a4b;
+  --chart-2: #d9cfc2;
+  --chart-3: #8e8a83;
+  --chart-4: #5c5a56;
+  --chart-5: #3b3b3b;
+}
