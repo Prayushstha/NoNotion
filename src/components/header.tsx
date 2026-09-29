@@ -1,8 +1,8 @@
 import "./header.css";
 import type { ThemeProps } from "../types";
-export function DashboardHeader({ theme, setTheme }: ThemeProps) {
+export function Header({ theme, setTheme }: ThemeProps) {
   return (
-    <header className="dashboard-header">
+    <header className="header">
       <div className="tool-bar">
         <div className="tool">
             {/* Sidebar Toggle Button */}
