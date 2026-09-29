@@ -15,8 +15,13 @@ export function HeroSection() {
         </div>
       </div>
       <div className="sub-hero-section">
-        <div className="heading"></div>
-        <div className="quick-add-section"></div>
+        <div className="heading">
+            <h2>Achieve Everything now!</h2>
+        </div>
+        <div className="quick-add-section">
+            {/* List easy to do tasks */}
+            <h2>Under Development</h2>
+        </div>
       </div>
     </div>
   );
