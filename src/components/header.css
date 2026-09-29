@@ -2,12 +2,15 @@
     display: flex;
     position: sticky;
     margin-top: 0;
+    padding-bottom: 5px;
     height: 30px;
     align-items: center;
-    background-color: var();
-    color: var(--color-primary);
-    font: var(--font-heading);
+    background-color: var(--background);
+    color: var(--primary);
+    font: var(--font-serif);
     width: 100%;
+    border-bottom: 1px solid var(--border);
+
 }
 
 .tool-bar {
@@ -18,6 +21,7 @@
     width: 20%;
     justify-content: space-between;
     gap: 1rem;
+    margin-left: 20px;
 }
 
 .tool {
@@ -53,7 +57,7 @@
 .bars {
   width: 100%;
   height: 4px;
-  background-color: var(--sidebar-button-secondary-text);
+  background-color: var(--muted-foreground);
   border-radius: 4px;
 }
 

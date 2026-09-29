@@ -1,4 +1,6 @@
 body{
-  background-color: var(--background-primary);
+  background-color: var(--background);
   font: var(--font-body);
+  margin: 0;
+  margin-top: 10px;
 }
