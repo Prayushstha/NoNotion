@@ -1,0 +1,39 @@
+.tasks-section{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    justify-self: center;
+    color: var(--primary);
+}
+.tasks-heading h1 {
+    margin-bottom: 10px;
+}
+.tasks-section-sub-header{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    min-height: 3rem;
+}
+.buttons{
+    display: flex;
+    gap: 0px;
+    justify-self: start;
+    align-self: center;
+}
+.time-switch-btn{
+    border: none ;
+    border-radius: var(--radius);
+    height: 35px;
+    width: 60px;
+    margin: 10px;
+    background-color: var(--foreground);
+    color: var(--secondary);
+    cursor: pointer;
+}
+
+.task-cards-container{
+    display: grid;
+    min-height: 20vh;
+}

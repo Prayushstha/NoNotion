@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    position: sticky;
+    position: fixed;
     margin-top: 0;
     padding-bottom: 5px;
     height: 30px;
@@ -10,7 +10,7 @@
     font: var(--font-serif);
     width: 100%;
     border-bottom: 1px solid var(--border);
-
+    z-index: 1;
 }
 
 .tool-bar {
