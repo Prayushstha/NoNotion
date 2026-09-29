@@ -1,10 +1,12 @@
-import { Header } from "../../components/header"
-import type { ThemeProps } from "../../types"
 
-export function Dashboard({theme ,setTheme}:ThemeProps) {
-    return (
-        <>
-        <Header theme={theme} setTheme = {setTheme} />
-        </>
-    )
+import { HeroSection } from "./components/HeroSection";
+import "./dashboard.css";
+export function Dashboard() {
+  return (
+    <div className="dashboard">
+        <div className="hero-section-container">
+          <HeroSection />
+        </div>
+    </div>
+  );
 }

@@ -1,0 +1,24 @@
+.hero-section{
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+.overview-section{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px;
+}
+.cover-image{
+    height: 10rem;
+    border-radius: var(--radius);
+}
+.quick-info{
+    padding: 5px;
+    color: var(--primary);
+    font-family: var(--font-serif);
+    font: bold;
+}

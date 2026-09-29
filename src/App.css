@@ -4,3 +4,6 @@ body{
   margin: 0;
   margin-top: 10px;
 }
+.main-content{
+  background-color: var(--secondary);
+}
