@@ -1,12 +1,12 @@
 import "./header.css";
-import type { ThemeProps } from "../types";
-export function Header({ theme, setTheme }: ThemeProps) {
+import type { UnionThemeSidebar } from "../types";
+export function Header({ theme=true, setTheme, sidebar , setSidebar }: UnionThemeSidebar) {
   return (
     <header className="header">
       <div className="tool-bar">
         <div className="tool">
             {/* Sidebar Toggle Button */}
-          <input type="checkbox" id="checkbox" />
+          <input type="checkbox" id="checkbox" onClick={()=>setSidebar?.(!sidebar)}/>
           <label htmlFor="checkbox" className="toggle">
             <div className="bars" id="bar1"></div>
             <div className="bars" id="bar2"></div>
@@ -23,7 +23,7 @@ export function Header({ theme, setTheme }: ThemeProps) {
         <label
           className="switch"
           htmlFor="check"
-          onClick={() => setTheme(!theme)}
+          onClick={() => setTheme?.(!theme)}
         >
           <svg viewBox="0 0 212.4992 84.4688" overflow="visible">
             <path

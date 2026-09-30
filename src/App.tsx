@@ -5,6 +5,8 @@ import { SideBar } from "./components/sidebar";
 import { Header } from "./components/header";
 function App() {
   const [theme, setTheme] = useState<boolean>(true);
+  const [sidebar,setSidebar] = useState<boolean>(true);
+
   useEffect(() => {
     if (theme) {
       document.documentElement.setAttribute("data-theme", "dark");
@@ -12,10 +14,12 @@ function App() {
       document.documentElement.removeAttribute("data-theme");
     }
   }, [theme]);
+
+
   return (
     <div className="main-container">
-      <Header theme={theme} setTheme={setTheme} />
-      <SideBar />
+      <Header theme={theme} setTheme={setTheme} sidebar={sidebar} setSidebar={setSidebar} />
+      <SideBar sidebar={sidebar} setSidebar={setSidebar} />
       <div className="main-content">
       <Dashboard />
       </div>

@@ -19,12 +19,12 @@
 }
 .quick-info{
     padding: 5px;
-    color: var(--primary);
+    color: var(--foreground);
     font-family: var(--font-serif);
     font: bold;
 }
 .sub-hero-section{
-    color: var(--primary);
+    color: var(--foreground);
     font: var(--font-serif);
     display: flex;
     flex-direction: column;

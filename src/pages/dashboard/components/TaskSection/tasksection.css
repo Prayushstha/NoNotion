@@ -4,7 +4,7 @@
     gap: 10px;
     width: 80%;
     justify-self: center;
-    color: var(--primary);
+    color: var(--foreground);
 }
 
 .tasks-heading h1 {
@@ -51,5 +51,6 @@
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background-color: var(--card);
+    color: var(--card-foreground);
     box-shadow: var(--shadow-sm);
 }

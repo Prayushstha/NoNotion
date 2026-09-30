@@ -1,8 +1,27 @@
-body{
+body {
   background-color: var(--background);
-  font: var(--font-sans);
+  font-family: var(--font-sans);
   margin: 0;
 }
-.main-content{
-  background-color: var(--secondary);
+
+.main-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  display: none;
+  flex-shrink: 0;
+}
+
+.sidebar-open {
+  display: flex;
+  z-index: 200;
+}
+
+.main-content {
+  flex: 1;
+  background-color: var(--background);
+  overflow-y: auto;
 }
