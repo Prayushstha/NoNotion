@@ -1,4 +1,4 @@
-.tasks-section{
+.tasks-section {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -6,24 +6,28 @@
     justify-self: center;
     color: var(--primary);
 }
+
 .tasks-heading h1 {
     margin-bottom: 10px;
 }
-.tasks-section-sub-header{
+
+.tasks-section-sub-header {
     display: flex;
     flex-direction: row;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     min-height: 3rem;
 }
-.buttons{
+
+.buttons {
     display: flex;
     gap: 0px;
     justify-self: start;
     align-self: center;
 }
-.time-switch-btn{
-    border: none ;
+
+.time-switch-btn {
+    border: none;
     border-radius: var(--radius);
     height: 35px;
     width: 60px;
@@ -33,7 +37,19 @@
     cursor: pointer;
 }
 
-.task-cards-container{
+.task-cards-container {
+    margin-top: 10px;
     display: grid;
-    min-height: 20vh;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    justify-items: center;
+}
+
+.task-card {
+    min-height: 250px;
+    width: 220px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background-color: var(--card);
+    box-shadow: var(--shadow-sm);
 }
