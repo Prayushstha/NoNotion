@@ -7,17 +7,27 @@ body {
 .main-container {
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
 
 .sidebar {
-  width: 260px;
-  display: none;
+  width: 0rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width 0.3s ease;
   flex-shrink: 0;
 }
 
-.sidebar-open {
+.sidebar.open {
+  width: 260px;
+}
+
+.content-wrapper {
+  flex: 1;
   display: flex;
-  z-index: 200;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .main-content {

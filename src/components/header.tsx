@@ -1,17 +1,30 @@
 import "./header.css";
 import type { UnionThemeSidebar } from "../types";
-export function Header({ theme=true, setTheme, sidebar , setSidebar }: UnionThemeSidebar) {
+export function Header({
+  theme = true,
+  setTheme,
+  sidebar,
+  setSidebar,
+}: UnionThemeSidebar) {
   return (
     <header className="header">
       <div className="tool-bar">
         <div className="tool">
-            {/* Sidebar Toggle Button */}
-          <input type="checkbox" id="checkbox" onClick={()=>setSidebar?.(!sidebar)}/>
-          <label htmlFor="checkbox" className="toggle">
-            <div className="bars" id="bar1"></div>
-            <div className="bars" id="bar2"></div>
-            <div className="bars" id="bar3"></div>
-          </label>
+          {/* Sidebar Toggle Button */}
+          {!sidebar && (
+            <>
+              <input
+                type="checkbox"
+                id="checkbox"
+                onClick={() => setSidebar?.(!sidebar)}
+              />
+              <label htmlFor="checkbox" className="toggle">
+                <div className="bars" id="bar1"></div>
+                <div className="bars" id="bar2"></div>
+                <div className="bars" id="bar3"></div>
+              </label>
+            </>
+          )}
         </div>
 
         {/* ---- */}

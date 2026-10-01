@@ -5,7 +5,7 @@ import { SideBar } from "./components/sidebar";
 import { Header } from "./components/header";
 function App() {
   const [theme, setTheme] = useState<boolean>(true);
-  const [sidebar,setSidebar] = useState<boolean>(true);
+  const [sidebar, setSidebar] = useState<boolean>(false);
 
   useEffect(() => {
     if (theme) {
@@ -15,17 +15,22 @@ function App() {
     }
   }, [theme]);
 
-
   return (
     <div className="main-container">
-      <Header theme={theme} setTheme={setTheme} sidebar={sidebar} setSidebar={setSidebar} />
       <SideBar sidebar={sidebar} setSidebar={setSidebar} />
-      <div className="main-content">
-      <Dashboard />
+      <div className="content-wrapper">
+        <Header
+          theme={theme}
+          setTheme={setTheme}
+          sidebar={sidebar}
+          setSidebar={setSidebar}
+        />
+        <div className="main-content">
+          <Dashboard />
+        </div>
       </div>
     </div>
-  )
+  );
 }
-
 
 export default App;
