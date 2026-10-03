@@ -4,7 +4,7 @@ export function SideBar({ sidebar, setSidebar }: Sidebar) {
   return (
     <div className={`sidebar ${sidebar ? "open" : ""}`}>
       <div className="top">
-        <h3>Sidebar</h3>
+        <h3>NoNotion</h3>
         <div className="sidebar-toggle">
           <input
             type="checkbox"
@@ -35,6 +35,7 @@ export function SideBar({ sidebar, setSidebar }: Sidebar) {
           />
         </div>
       </div>
+
     </div>
   );
 }

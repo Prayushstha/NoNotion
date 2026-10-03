@@ -1,38 +1,38 @@
 .header {
-    display: flex;
-    position: fixed;
-    margin-top: 0;
-    padding-bottom: 5px;
-    height: 30px;
-    align-items: center;
-    background-color: var(--background);
-    color: var(--foreground);
-    font: var(--font-serif);
-    width: 100%;
-    border-bottom: 1px solid var(--border);
-    z-index: 1;
+  display: flex;
+  position: fixed;
+  margin-top: 0;
+  padding-bottom: 5px;
+  height: 30px;
+  align-items: center;
+  background-color: var(--background);
+  color: var(--foreground);
+  font: var(--font-serif);
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  z-index: 1;
 }
 
 .tool-bar {
-    display: flex;
-    margin-right: 5px;
-    justify-self: flex-start;
-    align-items: center;
-    width: 20%;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-left: 20px;
+  display: flex;
+  margin-right: 5px;
+  justify-self: flex-start;
+  align-items: center;
+  width: 20%;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-left: 20px;
 }
 
 .tool {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .header-right {
-    display: flex;
-    color: var(--foreground);
-    position: inherit;
-    left: 95%;
+  display: flex;
+  color: var(--foreground);
+  position: inherit;
+  left: 95%;
 }
 /* Sidebar Toggle */
 #checkbox {
@@ -50,7 +50,7 @@
   align-self: center;
   justify-content: center;
   gap: 5px;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 .bars {
@@ -61,37 +61,38 @@
 }
 
 #bar2 {
-  transition-duration: .8s;
+  transition-duration: 0.8s;
 }
 
-#bar1,#bar3 {
+#bar1,
+#bar3 {
   width: 70%;
 }
 
 #checkbox:checked + .toggle .bars {
   position: absolute;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .toggle #bar2 {
   transform: scaleX(0);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .toggle #bar1 {
   width: 100%;
   transform: rotate(45deg);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .toggle #bar3 {
   width: 100%;
   transform: rotate(-45deg);
-  transition-duration: .5s;
+  transition-duration: 0.5s;
 }
 
 #checkbox:checked + .toggle {
-  transition-duration: .5s;
+  transition-duration: 0.5s;
   transform: rotate(180deg);
 }
 

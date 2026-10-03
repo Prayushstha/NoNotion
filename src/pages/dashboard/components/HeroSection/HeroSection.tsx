@@ -10,17 +10,17 @@ export function HeroSection() {
           <h1>Name</h1>
           <pre>
             Description: Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. 
+            elit.
           </pre>
         </div>
       </div>
       <div className="sub-hero-section">
         <div className="heading">
-            <h2>Achieve Everything now!</h2>
+          <h2>Achieve Everything now!</h2>
         </div>
         <div className="quick-add-section">
-            {/* List easy to do tasks */}
-            <h2>Under Development</h2>
+          {/* List easy to do tasks */}
+          <h2>Under Development</h2>
         </div>
       </div>
     </div>

@@ -12,12 +12,12 @@ Most habit and productivity apps either lock core features behind paywalls or co
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | React, TypeScript, HTML, CSS |
-| Framework | Electron + Vite |
-| Backend | Node.js |
-| Database | SQLite |
+| Layer     | Technology                   |
+| --------- | ---------------------------- |
+| Frontend  | React, TypeScript, HTML, CSS |
+| Framework | Electron + Vite              |
+| Backend   | Node.js                      |
+| Database  | SQLite                       |
 
 ---
 
@@ -43,6 +43,7 @@ Tasks, habits, reminders, calendar, and dashboard.
 ## Features
 
 ### Pages
+
 - [ ] Create, edit, delete, duplicate
 - [ ] Nested pages
 - [ ] Move pages
@@ -53,6 +54,7 @@ Tasks, habits, reminders, calendar, and dashboard.
 - [ ] Breadcrumbs
 
 ### Editor
+
 - [ ] Paragraphs
 - [ ] H1 / H2 / H3
 - [ ] Bulleted / numbered lists
@@ -69,6 +71,7 @@ Tasks, habits, reminders, calendar, and dashboard.
 - [ ] Slash commands
 
 ### Organization
+
 - [ ] Tags
 - [ ] Search
 - [ ] Sorting / filtering
@@ -78,6 +81,7 @@ Tasks, habits, reminders, calendar, and dashboard.
 - [ ] Templates
 
 ### Productivity
+
 - [ ] Tasks
 - [ ] Due dates
 - [ ] Priorities
@@ -88,6 +92,7 @@ Tasks, habits, reminders, calendar, and dashboard.
 - [ ] Dashboard
 
 ### Storage
+
 - [ ] Offline-first
 - [ ] Local database
 - [ ] Auto-save
@@ -95,6 +100,7 @@ Tasks, habits, reminders, calendar, and dashboard.
 - [ ] Backup
 
 ### Customization
+
 - [ ] Light / dark mode
 - [ ] Themes
 - [ ] Font settings

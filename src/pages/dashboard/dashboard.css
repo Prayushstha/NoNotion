@@ -1,9 +1,9 @@
-.dashboard{
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
-.hero-section-container{
-    width: 50%;
-    align-self: center;
+.hero-section-container {
+  width: 50%;
+  align-self: center;
 }
