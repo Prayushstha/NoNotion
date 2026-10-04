@@ -28,8 +28,7 @@ export function Header({
         </div>
 
         {/* ---- */}
-        <div className="tool">Placeholder2</div>
-        <div className="tool">Placeholder3</div>
+        
       </div>
       <div className="header-right">
         <input id="check" type="checkbox" />
