@@ -10,6 +10,9 @@
 .sidebar.open {
   padding: 0.5rem 0;
 }
+.sidebar.open.sidebar-toggle{
+  color: var(--muted-foreground);
+}
 .top {
   display: flex;
   flex-direction: row;
@@ -17,22 +20,76 @@
   justify-content: space-between;
   width: 220px;
   margin: 0px auto 0 auto;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--sidebar-border) ;
 }
-.top h3 {
+.sidebar-highlight {
   margin: 0;
 }
 
-.searchbar {
-  margin-top: 20px;
+.pages-nav {
+  height: auto;
+  width: 220px;
+  margin: 15px auto 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--sidebar-border) ;
+}
+.pages-nav .sidebar-highlight{
+  justify-self: flex-start;
+  height: max-content;
+  width: 100%;
+  padding-bottom: 4px;
+}
+.navigations{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+  width: 100%;
+}
+.nav-link{
+ border-radius: var(--radius);
+ padding: 10px 5px;
+ cursor: pointer;
+}
+.nav-link:hover{
+  background-color: var(--sidebar-accent);
+}
+.nav-link.active{
+  background-color: var(--sidebar-primary-foreground);
 }
 
+.projects-nav{
+  height: auto;
+  width: 220px;
+  margin: 15px auto 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--sidebar-border) ;
+}
+.projects-nav .sidebar-highlight{
+    justify-self: flex-start;
+  height: max-content;
+  width: 100%;
+  padding-bottom: 4px;
+}
+
+.searchbar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 /* From Uiverse.io by LightAndy1 */
 .group {
   display: flex;
   line-height: 28px;
   align-items: center;
   position: relative;
-  width: 230px;
+  width: 220px;
 }
 
 .input {
@@ -74,4 +131,60 @@
   height: 1rem;
   pointer-events: none;
   z-index: 1;
+}
+.project-nav-link{
+ border-radius: var(--radius);
+ padding: 10px 5px;
+ cursor: pointer;
+}
+.project-nav-link:hover{
+    background-color: var(--sidebar-accent);
+}
+.project-nav-link.active{
+  background-color: var(--sidebar-primary-foreground);
+}
+.user-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-top: auto;
+  width: 230px;
+  margin-bottom: 20px;
+}
+
+.user-area:hover {
+  background-color: var(--sidebar-accent);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 14px;
+  color: var(--sidebar-foreground);
+  font-weight: 500;
+}
+
+.user-sub {
+  font-size: 12px;
+  color: var(--muted-foreground);
 }
