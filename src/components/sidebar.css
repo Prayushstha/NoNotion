@@ -1,32 +1,29 @@
 .sidebar {
   background-color: var(--sidebar);
   color: var(--sidebar-foreground);
-  min-height: 100%;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  min-height: 100%;
 }
 
+.sidebar.open {
+  padding: 0.5rem 0;
+}
 .top {
   display: flex;
   flex-direction: row;
-  margin-left: 20px;
-  margin-top: 1px;
-  width: 100%;
+  align-items: center;
   justify-content: space-between;
-  max-height: 25px;
+  width: 220px;
+  margin: 0px auto 0 auto;
 }
-
 .top h3 {
-  align-self: center;
-}
-
-.sidebar-toggle {
-  margin-right: 20px;
+  margin: 0;
 }
 
 .searchbar {
   margin-top: 20px;
-  margin-left: 20px;
-  justify-self: center;
 }
 
 /* From Uiverse.io by LightAndy1 */
@@ -35,35 +32,30 @@
   line-height: 28px;
   align-items: center;
   position: relative;
-  max-width: 230px;
+  width: 230px;
 }
 
 .input {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-sans);
   width: 100%;
   height: 25px;
   padding-left: 2.5rem;
-  box-shadow:
-    0 0 0 1.5px #2b2c37,
-    0 0 25px -17px #000;
-  border: 0;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   background-color: var(--input);
   outline: none;
-  color: var(--secondary-foreground);
+  color: var(--sidebar-foreground);
   transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
   cursor: text;
-  z-index: 0;
 }
 
 .input::placeholder {
-  color: var(--secondary-foreground);
+  color: var(--muted-foreground);
 }
 
 .input:hover {
-  box-shadow:
-    0 0 0 2.5px #2f303d,
-    0px 0px 25px -15px #000;
+  border-color: var(--ring);
+  box-shadow: var(--shadow-sm);
 }
 
 .input:active {
@@ -71,13 +63,13 @@
 }
 
 .input:focus {
-  box-shadow: 0 0 0 2.5px #2f303d;
+  outline: 2px solid var(--ring);
 }
 
 .search-icon {
   position: absolute;
   left: 1rem;
-  fill: var(--ring);
+  fill: var(--muted-foreground);
   width: 1rem;
   height: 1rem;
   pointer-events: none;
