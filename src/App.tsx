@@ -5,7 +5,7 @@ import { SideBar } from "./components/sidebar";
 import { Header } from "./components/header";
 function App() {
   const [theme, setTheme] = useState<boolean>(true);
-  const [sidebar, setSidebar] = useState<boolean>(false);
+  const [sidebar, setSidebar] = useState<boolean>(true);
 
   useEffect(() => {
     if (theme) {
