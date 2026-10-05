@@ -17,7 +17,7 @@ import "./sidebar.css";
 export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
   const [userSettings, setUserSettings] = useState(false);
   const [themePopup, setThemePopup] = useState(false);
-  const [activePage, setActivePage] = useState(false);
+  const [activeLink, setActiveLink] = useState<string | null>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const themePopupRef = useRef<HTMLDivElement>(null);
 
@@ -58,21 +58,30 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
         <h3 className="sidebar-highlight">Pages</h3>
         <div className="navigations">
           <div
-            className={`nav-link ${activePage ? "active" : ""}`}
-            onClick={() => setActivePage(!activePage)}
+            className={`nav-link ${activeLink === "dashboard" ? "active" : ""}`}
+            onClick={() => setActiveLink("dashboard")}
           >
             <LayoutDashboard size={16} color="currentColor" />
             Dashboard
           </div>
-          <div className="nav-link">
+          <div
+            className={`nav-link ${activeLink === "habits" ? "active" : ""}`}
+            onClick={() => setActiveLink("habits")}
+          >
             <CheckSquare size={16} color="currentColor" />
             My Habits
           </div>
-          <div className="nav-link">
+          <div
+            className={`nav-link ${activeLink === "insights" ? "active" : ""}`}
+            onClick={() => setActiveLink("insights")}
+          >
             <BarChart2 size={16} color="currentColor" />
             Insights
           </div>
-          <div className="nav-link">
+          <div
+            className={`nav-link ${activeLink === "settings" ? "active" : ""}`}
+            onClick={() => setActiveLink("settings")}
+          >
             <Settings2 size={16} color="currentColor" />
             Settings
           </div>
@@ -102,23 +111,38 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           </div>
         </div>
         <div className="navigation">
-          <div className="project-nav-link">
+          <div
+            className={`project-nav-link ${activeLink === "daily-routine" ? "active" : ""}`}
+            onClick={() => setActiveLink("daily-routine")}
+          >
             <FileText size={16} color="currentColor" />
             Daily Routine
           </div>
-          <div className="project-nav-link">
+          <div
+            className={`project-nav-link ${activeLink === "work-life" ? "active" : ""}`}
+            onClick={() => setActiveLink("work-life")}
+          >
             <FileText size={16} color="currentColor" />
             Work Life
           </div>
-          <div className="project-nav-link">
+          <div
+            className={`project-nav-link ${activeLink === "finance-management" ? "active" : ""}`}
+            onClick={() => setActiveLink("finance-management")}
+          >
             <FileText size={16} color="currentColor" />
             Finance Management
           </div>
-          <div className="project-nav-link">
+          <div
+            className={`project-nav-link ${activeLink === "reminders" ? "active" : ""}`}
+            onClick={() => setActiveLink("reminders")}
+          >
             <FileText size={16} color="currentColor" />
             Reminders
           </div>
-          <div className="project-nav-link add-new-btn">
+          <div
+            className={`project-nav-link add-new-btn ${activeLink === "add-new" ? "active" : ""}`}
+            onClick={() => setActiveLink("add-new")}
+          >
             <Plus size={16} color="currentColor" />
             Add New
           </div>
