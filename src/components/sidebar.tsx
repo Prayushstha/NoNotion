@@ -107,6 +107,15 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           <FolderOpen size={16} color="currentColor" />
           Your Projects
         </h3>
+        <button
+          className="collapsed-search-toggle"
+          type="button"
+          title="Search"
+          aria-label="Open search"
+          onClick={() => setSidebar(true)}
+        >
+          <Search size={16} color="currentColor" />
+        </button>
         <div className="searchbar">
           <div className="group">
             <Search
