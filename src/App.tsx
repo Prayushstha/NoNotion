@@ -17,7 +17,8 @@ function App() {
 
   return (
     <div className="main-container">
-      <SideBar sidebar={sidebar} setSidebar={setSidebar} />
+      <SideBar sidebar={sidebar} setSidebar={setSidebar} theme={theme}
+          setTheme={setTheme}/>
       <div className="content-wrapper">
         <Header
           theme={theme}
