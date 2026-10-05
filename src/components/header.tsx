@@ -26,10 +26,18 @@ export function Header({
             </>
           )}
         </div>
-
+  
         {/* ---- */}
-        
       </div>
+       <div className="nav-info">
+            <div className="title" id="nav-info title">
+              NoNotion
+            </div>
+            <div className="spacer"> {'>'} </div>
+             <div className="dashboard" id="nav-info dashboard">
+              Dashboard
+            </div>
+          </div>
       <div className="header-right">
         <input id="check" type="checkbox" />
         <label

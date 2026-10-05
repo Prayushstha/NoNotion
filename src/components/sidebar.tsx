@@ -62,6 +62,7 @@ export function SideBar({ sidebar, setSidebar }: Sidebar) {
           <div className="project-nav-link">Work Life</div>
           <div className="project-nav-link">Finance Management</div>
           <div className="project-nav-link">Reminders</div>
+          <div className="project-nav-link">Add New</div>
         </div>
       </div>
 
