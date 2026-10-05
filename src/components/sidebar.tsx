@@ -1,8 +1,10 @@
 import { useState } from "react";
 import type { Sidebar } from "../types";
 import "./sidebar.css";
+import { SidebarUserPopup } from "./sidebarUserPopup";
 export function SideBar({ sidebar, setSidebar }: Sidebar) {
   const [activePage, setActivePage] = useState(false);
+  const [userSettings, setUserSettings] = useState(false);
   return (
     <div className={`sidebar ${sidebar ? "open" : ""}`}>
       <div className="top">
@@ -65,12 +67,19 @@ export function SideBar({ sidebar, setSidebar }: Sidebar) {
           <div className="project-nav-link add-new-btn">Add New + </div>
         </div>
       </div>
-
-      <div className="user-area">
-        <div className="user-avatar">P</div>
-        <div className="user-info">
-          <span className="user-name">Prayush</span>
-          <span className="user-sub">Personal workspace</span>
+      <div className="user-area-wrapper">
+        <div className={`sidebar-user-popup ${userSettings ? "open" : ""}`}>
+          <SidebarUserPopup />
+        </div>
+        <div
+          className="user-area"
+          onClick={() => setUserSettings(!userSettings)}
+        >
+          <div className="user-avatar">P</div>
+          <div className="user-info">
+            <span className="user-name">Prayush</span>
+            <span className="user-sub">Personal workspace</span>
+          </div>
         </div>
       </div>
     </div>
