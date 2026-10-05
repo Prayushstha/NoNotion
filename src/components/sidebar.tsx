@@ -1,10 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { Sidebar } from "../types";
 import "./sidebar.css";
 import { SidebarUserPopup } from "./sidebarUserPopup";
 export function SideBar({ sidebar, setSidebar }: Sidebar) {
-  const [activePage, setActivePage] = useState(false);
   const [userSettings, setUserSettings] = useState(false);
+  const [themePopup, setThemePopup] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const themePopupRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      const clickedWrapper = wrapperRef.current?.contains(e.target as Node);
+      const clickedThemePopup = themePopupRef.current?.contains(
+        e.target as Node,
+      );
+
+      if (!clickedWrapper && !clickedThemePopup) {
+        setUserSettings(false);
+        setThemePopup(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+  const [activePage, setActivePage] = useState(false);
   return (
     <div className={`sidebar ${sidebar ? "open" : ""}`}>
       <div className="top">
@@ -67,9 +86,13 @@ export function SideBar({ sidebar, setSidebar }: Sidebar) {
           <div className="project-nav-link add-new-btn">Add New + </div>
         </div>
       </div>
-      <div className="user-area-wrapper">
+      <div className="user-area-wrapper" ref={wrapperRef}>
         <div className={`sidebar-user-popup ${userSettings ? "open" : ""}`}>
-          <SidebarUserPopup />
+          <SidebarUserPopup
+            themePopupRef={themePopupRef}
+            themePopup={themePopup}
+            setThemePopup={setThemePopup}
+          />
         </div>
         <div
           className="user-area"

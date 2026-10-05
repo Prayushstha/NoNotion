@@ -2,12 +2,18 @@ import { useState } from "react";
 import "./sidebaruserpopup.css";
 import { Monitor, Sun, Moon } from "lucide-react";
 import { createPortal } from "react-dom";
-export function SidebarUserPopup() {
-  const [themePopup, setThemePopup] = useState(false);
+
+interface SidebarUserPopupProps {
+  themePopupRef: React.RefObject<HTMLDivElement | null>;
+  themePopup: boolean;
+  setThemePopup: (value: boolean) => void;
+}
+
+export function SidebarUserPopup({ themePopupRef, themePopup, setThemePopup }: SidebarUserPopupProps) {
   return (
     <div className="popup-container">
        {themePopup && createPortal(
-        <div className="second-popup-menu">
+        <div className="second-popup-menu" ref={themePopupRef}>
           <button className="value"><Monitor size={15} />Auto</button>
           <button className="value"><Sun size={15} />Light</button>
           <button className="value"><Moon size={15} />Dark</button>

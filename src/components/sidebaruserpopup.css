@@ -58,6 +58,7 @@
   cursor: pointer;
   border-radius: 4px;
   align-items: center;
+  width: 100%;
 }
 
 .value:not(:active):hover,
