@@ -20,12 +20,7 @@ function App() {
       <SideBar sidebar={sidebar} setSidebar={setSidebar} theme={theme}
           setTheme={setTheme}/>
       <div className="content-wrapper">
-        <Header
-          theme={theme}
-          setTheme={setTheme}
-          sidebar={sidebar}
-          setSidebar={setSidebar}
-        />
+        <Header />
         <div className="main-content">
           <Dashboard />
         </div>

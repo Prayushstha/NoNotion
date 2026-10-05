@@ -1,8 +1,6 @@
 .sidebar-user-popup {
-  position: absolute;
-  bottom: 60px;
-  left: 40px;
-  z-index: 100;
+  position: fixed;
+  z-index: 1000;
   background-color: var(--sidebar);
   border: 1px solid var(--sidebar-border);
   border-radius: var(--radius);
@@ -31,14 +29,14 @@
 
 .second-popup-menu {
   position: fixed;
-  left: 260px;
-  bottom: 120px;
+  left: 48px;
+  top: 50%;
   width: 170px;
   background-color: var(--sidebar);
   border: 1px solid var(--sidebar-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
-  z-index: 200;
+  z-index: 1001;
 }
 
 .popup-menu {

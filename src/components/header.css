@@ -13,21 +13,6 @@
   z-index: 1;
 }
 
-.tool-open {
-  display: none;
-}
-
-.tool {
-  display: flex;
-  margin-right: 5px;
-  justify-self: flex-start;
-  align-items: center;
-  width: max-content;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-left: 20px;
-}
-
 .nav-info {
   display: flex;
   flex-direction: row;

@@ -8,7 +8,6 @@ import {
   Plus,
   Search,
   Settings2,
-  X,
 } from "lucide-react";
 import type { sidebar } from "../types";
 import { SidebarUserPopup } from "./sidebarUserPopup";
@@ -19,6 +18,9 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
   const [themePopup, setThemePopup] = useState(false);
   const [activeLink, setActiveLink] = useState<string | null>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const userAreaRef = useRef<HTMLDivElement>(null);
+  const userPopupRef = useRef<HTMLDivElement>(null);
+  const appearanceButtonRef = useRef<HTMLButtonElement>(null);
   const themePopupRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,8 +29,11 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
       const clickedThemePopup = themePopupRef.current?.contains(
         event.target as Node,
       );
+      const clickedUserPopup = userPopupRef.current?.contains(
+        event.target as Node,
+      );
 
-      if (!clickedWrapper && !clickedThemePopup) {
+      if (!clickedWrapper && !clickedThemePopup && !clickedUserPopup) {
         setUserSettings(false);
         setThemePopup(false);
       }
@@ -43,14 +48,18 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
       <div className="top">
         <h3 className="sidebar-highlight">NoNotion</h3>
         <div className="sidebar-toggle">
-          <button
-            className="sidebar-close"
-            type="button"
-            aria-label="Close sidebar"
-            onClick={() => setSidebar(false)}
-          >
-            <X size={16} color="currentColor" />
-          </button>
+          <input
+            type="checkbox"
+            id="checkbox"
+            checked={sidebar}
+            onChange={() => setSidebar(!sidebar)}
+            aria-label={sidebar ? "Collapse sidebar" : "Expand sidebar"}
+          />
+          <label htmlFor="checkbox" className="toggle">
+            <div className="bars" id="bar1"></div>
+            <div className="bars" id="bar2"></div>
+            <div className="bars" id="bar3"></div>
+          </label>
         </div>
       </div>
 
@@ -62,28 +71,28 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
             onClick={() => setActiveLink("dashboard")}
           >
             <LayoutDashboard size={16} color="currentColor" />
-            Dashboard
+            <span className="nav-label">Dashboard</span>
           </div>
           <div
             className={`nav-link ${activeLink === "habits" ? "active" : ""}`}
             onClick={() => setActiveLink("habits")}
           >
             <CheckSquare size={16} color="currentColor" />
-            My Habits
+            <span className="nav-label">My Habits</span>
           </div>
           <div
             className={`nav-link ${activeLink === "insights" ? "active" : ""}`}
             onClick={() => setActiveLink("insights")}
           >
             <BarChart2 size={16} color="currentColor" />
-            Insights
+            <span className="nav-label">Insights</span>
           </div>
           <div
             className={`nav-link ${activeLink === "settings" ? "active" : ""}`}
             onClick={() => setActiveLink("settings")}
           >
             <Settings2 size={16} color="currentColor" />
-            Settings
+            <span className="nav-label">Settings</span>
           </div>
         </div>
       </div>
@@ -116,52 +125,47 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
             onClick={() => setActiveLink("daily-routine")}
           >
             <FileText size={16} color="currentColor" />
-            Daily Routine
+            <span className="nav-label">Daily Routine</span>
           </div>
           <div
             className={`project-nav-link ${activeLink === "work-life" ? "active" : ""}`}
             onClick={() => setActiveLink("work-life")}
           >
             <FileText size={16} color="currentColor" />
-            Work Life
+            <span className="nav-label">Work Life</span>
           </div>
           <div
             className={`project-nav-link ${activeLink === "finance-management" ? "active" : ""}`}
             onClick={() => setActiveLink("finance-management")}
           >
             <FileText size={16} color="currentColor" />
-            Finance Management
+            <span className="nav-label">Finance Management</span>
           </div>
           <div
             className={`project-nav-link ${activeLink === "reminders" ? "active" : ""}`}
             onClick={() => setActiveLink("reminders")}
           >
             <FileText size={16} color="currentColor" />
-            Reminders
+            <span className="nav-label">Reminders</span>
           </div>
           <div
             className={`project-nav-link add-new-btn ${activeLink === "add-new" ? "active" : ""}`}
             onClick={() => setActiveLink("add-new")}
           >
             <Plus size={16} color="currentColor" />
-            Add New
+            <span className="nav-label">Add New</span>
           </div>
         </div>
       </div>
 
       <div className="user-area-wrapper" ref={wrapperRef}>
-        <div className={`sidebar-user-popup ${userSettings ? "open" : ""}`}>
-          <SidebarUserPopup
-            themePopupRef={themePopupRef}
-            themePopup={themePopup}
-            setThemePopup={setThemePopup}
-            theme={theme}
-            setTheme={setTheme}
-          />
-        </div>
         <div
+          ref={userAreaRef}
           className="user-area"
-          onClick={() => setUserSettings(!userSettings)}
+          onClick={() => {
+            setUserSettings((isOpen) => !isOpen);
+            setThemePopup(false);
+          }}
         >
           <div className="user-avatar">P</div>
           <div className="user-info">
@@ -170,6 +174,17 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           </div>
         </div>
       </div>
+      <SidebarUserPopup
+        open={userSettings}
+        userAreaRef={userAreaRef}
+        userPopupRef={userPopupRef}
+        appearanceButtonRef={appearanceButtonRef}
+        themePopupRef={themePopupRef}
+        themePopup={themePopup}
+        setThemePopup={setThemePopup}
+        theme={theme}
+        setTheme={setTheme}
+      />
     </div>
   );
 }
