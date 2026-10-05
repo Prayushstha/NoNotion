@@ -8,8 +8,7 @@ export function Header({
 }: UnionThemeSidebar) {
   return (
     <header className="header">
-      <div className="tool-bar">
-        <div className="tool">
+        <div className={!sidebar? 'tool' : 'tool-open'}>
           {/* Sidebar Toggle Button */}
           {!sidebar && (
             <>
@@ -25,7 +24,6 @@ export function Header({
               </label>
             </>
           )}
-        </div>
   
         {/* ---- */}
       </div>

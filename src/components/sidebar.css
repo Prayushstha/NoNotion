@@ -143,6 +143,9 @@
 .project-nav-link.active{
   background-color: var(--sidebar-primary-foreground);
 }
+.add-new-btn{
+  background-color: var(--input);
+}
 .user-area {
   display: flex;
   align-items: center;

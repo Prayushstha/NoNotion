@@ -13,7 +13,11 @@
   z-index: 1;
 }
 
-.tool-bar {
+.tool-open {
+  display: none;
+}
+
+.tool {
   display: flex;
   margin-right: 5px;
   justify-self: flex-start;
@@ -24,9 +28,6 @@
   margin-left: 20px;
 }
 
-.tool {
-  margin-right: 15px;
-}
 .nav-info {
   display: flex;
   flex-direction: row;
