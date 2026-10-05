@@ -195,6 +195,11 @@
   border-bottom: 0;
 }
 
+.sidebar:not(.open) .pages-nav {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--sidebar-border);
+}
+
 .sidebar:not(.open) .navigations,
 .sidebar:not(.open) .navigation {
   margin-top: 0;
@@ -207,10 +212,12 @@
 
 .sidebar:not(.open) .nav-link,
 .sidebar:not(.open) .project-nav-link {
-  width: 48px;
-  min-width: 48px;
+  width: var(--sidebar-item-height);
+  min-width: var(--sidebar-item-height);
+  height: var(--sidebar-item-height);
   padding: 0;
   gap: 0;
+  margin-inline: auto;
 }
 
 .sidebar:not(.open) .user-area {

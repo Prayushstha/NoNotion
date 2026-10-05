@@ -54,6 +54,7 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
             checked={sidebar}
             onChange={() => setSidebar(!sidebar)}
             aria-label={sidebar ? "Collapse sidebar" : "Expand sidebar"}
+            title={sidebar ? "Collapse sidebar" : "Expand sidebar"}
           />
           <label htmlFor="checkbox" className="toggle">
             <div className="bars" id="bar1"></div>
@@ -69,6 +70,7 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           <div
             className={`nav-link ${activeLink === "dashboard" ? "active" : ""}`}
             onClick={() => setActiveLink("dashboard")}
+            title="Dashboard"
           >
             <LayoutDashboard size={16} color="currentColor" />
             <span className="nav-label">Dashboard</span>
@@ -76,6 +78,7 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           <div
             className={`nav-link ${activeLink === "habits" ? "active" : ""}`}
             onClick={() => setActiveLink("habits")}
+            title="My Habits"
           >
             <CheckSquare size={16} color="currentColor" />
             <span className="nav-label">My Habits</span>
@@ -83,6 +86,7 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           <div
             className={`nav-link ${activeLink === "insights" ? "active" : ""}`}
             onClick={() => setActiveLink("insights")}
+            title="Insights"
           >
             <BarChart2 size={16} color="currentColor" />
             <span className="nav-label">Insights</span>
@@ -90,6 +94,7 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           <div
             className={`nav-link ${activeLink === "settings" ? "active" : ""}`}
             onClick={() => setActiveLink("settings")}
+            title="Settings"
           >
             <Settings2 size={16} color="currentColor" />
             <span className="nav-label">Settings</span>
@@ -123,6 +128,7 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           <div
             className={`project-nav-link ${activeLink === "daily-routine" ? "active" : ""}`}
             onClick={() => setActiveLink("daily-routine")}
+            title="Daily Routine"
           >
             <FileText size={16} color="currentColor" />
             <span className="nav-label">Daily Routine</span>
@@ -130,6 +136,7 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           <div
             className={`project-nav-link ${activeLink === "work-life" ? "active" : ""}`}
             onClick={() => setActiveLink("work-life")}
+            title="Work Life"
           >
             <FileText size={16} color="currentColor" />
             <span className="nav-label">Work Life</span>
@@ -137,6 +144,7 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           <div
             className={`project-nav-link ${activeLink === "finance-management" ? "active" : ""}`}
             onClick={() => setActiveLink("finance-management")}
+            title="Finance Management"
           >
             <FileText size={16} color="currentColor" />
             <span className="nav-label">Finance Management</span>
@@ -144,6 +152,7 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           <div
             className={`project-nav-link ${activeLink === "reminders" ? "active" : ""}`}
             onClick={() => setActiveLink("reminders")}
+            title="Reminders"
           >
             <FileText size={16} color="currentColor" />
             <span className="nav-label">Reminders</span>
@@ -151,6 +160,7 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           <div
             className={`project-nav-link add-new-btn ${activeLink === "add-new" ? "active" : ""}`}
             onClick={() => setActiveLink("add-new")}
+            title="Add New"
           >
             <Plus size={16} color="currentColor" />
             <span className="nav-label">Add New</span>
@@ -162,6 +172,7 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
         <div
           ref={userAreaRef}
           className="user-area"
+          title={sidebar ? undefined : "User profile"}
           onClick={() => {
             setUserSettings((isOpen) => !isOpen);
             setThemePopup(false);
