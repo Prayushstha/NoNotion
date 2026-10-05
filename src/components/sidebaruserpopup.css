@@ -18,47 +18,55 @@
   pointer-events: all;
   transform: translateY(0);
 }
+
 .user-area-wrapper {
   position: relative;
   margin-top: auto;
   width: 100%;
 }
+
 .popup-container {
   position: relative;
 }
+
 .second-popup-menu {
   position: fixed;
   left: 260px;
   bottom: 120px;
-  width: 150px;
+  width: 170px;
   background-color: var(--sidebar);
   border: 1px solid var(--sidebar-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
   z-index: 200;
 }
+
 .popup-menu {
   display: flex;
   flex-direction: column;
   width: 200px;
   background-color: var(--sidebar);
   justify-content: center;
-  border-radius: 5px;
+  border-radius: var(--radius);
   border: 1px solid var(--sidebar-border);
+  overflow: hidden;
 }
 
 .value {
   background-color: transparent;
   border: none;
-  padding: 10px;
+  padding: 10px 12px;
   color: var(--sidebar-foreground);
   display: flex;
-  position: relative;
-  gap: 5px;
+  align-items: center;
+  gap: 8px;
   cursor: pointer;
   border-radius: 4px;
-  align-items: center;
   width: 100%;
+  font-size: 0.88rem;
+  font-family: var(--font-sans);
+  text-align: left;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .value:not(:active):hover,
@@ -93,5 +101,6 @@
 
 .value svg {
   width: 15px;
+  height: 15px;
   flex-shrink: 0;
 }

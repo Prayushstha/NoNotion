@@ -17,6 +17,8 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   min-height: 3rem;
+  background-color: var(--card);
+  color: var(--card-foreground);
 }
 
 .buttons {
@@ -32,9 +34,15 @@
   height: 35px;
   width: 60px;
   margin: 10px;
-  background-color: var(--foreground);
-  color: var(--secondary);
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
   cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.time-switch-btn:hover {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
 }
 
 .task-cards-container {

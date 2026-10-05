@@ -1,17 +1,31 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import {
+  BarChart2,
+  CheckSquare,
+  FileText,
+  FolderOpen,
+  LayoutDashboard,
+  Plus,
+  Search,
+  Settings2,
+  X,
+} from "lucide-react";
 import type { sidebar } from "../types";
-import "./sidebar.css";
 import { SidebarUserPopup } from "./sidebarUserPopup";
+import "./sidebar.css";
+
 export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
   const [userSettings, setUserSettings] = useState(false);
   const [themePopup, setThemePopup] = useState(false);
+  const [activePage, setActivePage] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const themePopupRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      const clickedWrapper = wrapperRef.current?.contains(e.target as Node);
+    function handleClickOutside(event: MouseEvent) {
+      const clickedWrapper = wrapperRef.current?.contains(event.target as Node);
       const clickedThemePopup = themePopupRef.current?.contains(
-        e.target as Node,
+        event.target as Node,
       );
 
       if (!clickedWrapper && !clickedThemePopup) {
@@ -23,23 +37,20 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-  const [activePage, setActivePage] = useState(false);
+
   return (
     <div className={`sidebar ${sidebar ? "open" : ""}`}>
       <div className="top">
         <h3 className="sidebar-highlight">NoNotion</h3>
         <div className="sidebar-toggle">
-          <input
-            type="checkbox"
-            id="checkbox"
-            checked={sidebar}
-            onClick={() => setSidebar?.(!sidebar)}
-          />
-          <label htmlFor="checkbox" className="toggle">
-            <div className="bars" id="bar1"></div>
-            <div className="bars" id="bar2"></div>
-            <div className="bars" id="bar3"></div>
-          </label>
+          <button
+            className="sidebar-close"
+            type="button"
+            aria-label="Close sidebar"
+            onClick={() => setSidebar(false)}
+          >
+            <X size={16} color="currentColor" />
+          </button>
         </div>
       </div>
 
@@ -48,32 +59,39 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
         <div className="navigations">
           <div
             className={`nav-link ${activePage ? "active" : ""}`}
-            onClick={() => {
-              setActivePage(!activePage);
-            }}
+            onClick={() => setActivePage(!activePage)}
           >
+            <LayoutDashboard size={16} color="currentColor" />
             Dashboard
           </div>
-          <div className="nav-link">My Habits</div>
-          <div className="nav-link">Insights</div>
-          <div className="nav-link">Settings</div>
+          <div className="nav-link">
+            <CheckSquare size={16} color="currentColor" />
+            My Habits
+          </div>
+          <div className="nav-link">
+            <BarChart2 size={16} color="currentColor" />
+            Insights
+          </div>
+          <div className="nav-link">
+            <Settings2 size={16} color="currentColor" />
+            Settings
+          </div>
         </div>
       </div>
 
       <div className="projects-nav">
-        <h3 className="sidebar-highlight">Your Projects</h3>
+        <h3 className="sidebar-highlight project-heading">
+          <FolderOpen size={16} color="currentColor" />
+          Your Projects
+        </h3>
         <div className="searchbar">
           <div className="group">
-            <svg viewBox="0 0 24 24" aria-hidden="true" className="search-icon">
-              <g>
-                <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
-              </g>
-            </svg>
-            <svg viewBox="0 0 24 24" aria-hidden="true" className="search-icon">
-              <g>
-                <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
-              </g>
-            </svg>
+            <Search
+              className="search-icon"
+              size={16}
+              color="currentColor"
+              aria-hidden="true"
+            />
             <input
               id="query"
               className="input"
@@ -84,13 +102,29 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
           </div>
         </div>
         <div className="navigation">
-          <div className="project-nav-link">Daily Routine</div>
-          <div className="project-nav-link">Work Life</div>
-          <div className="project-nav-link">Finance Management</div>
-          <div className="project-nav-link">Reminders</div>
-          <div className="project-nav-link add-new-btn">Add New + </div>
+          <div className="project-nav-link">
+            <FileText size={16} color="currentColor" />
+            Daily Routine
+          </div>
+          <div className="project-nav-link">
+            <FileText size={16} color="currentColor" />
+            Work Life
+          </div>
+          <div className="project-nav-link">
+            <FileText size={16} color="currentColor" />
+            Finance Management
+          </div>
+          <div className="project-nav-link">
+            <FileText size={16} color="currentColor" />
+            Reminders
+          </div>
+          <div className="project-nav-link add-new-btn">
+            <Plus size={16} color="currentColor" />
+            Add New
+          </div>
         </div>
       </div>
+
       <div className="user-area-wrapper" ref={wrapperRef}>
         <div className={`sidebar-user-popup ${userSettings ? "open" : ""}`}>
           <SidebarUserPopup

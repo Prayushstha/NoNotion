@@ -1,109 +1,144 @@
 .sidebar {
+  --sidebar-width: 220px;
+  --sidebar-inline-padding: 12px;
+  --sidebar-section-gap: 14px;
+  --sidebar-item-height: 28px;
   background-color: var(--sidebar);
   color: var(--sidebar-foreground);
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100%;
+  font-family: var(--font-sans);
 }
 
 .sidebar.open {
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
 }
-.sidebar.open.sidebar-toggle{
+
+.sidebar-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--muted-foreground);
 }
-.top {
+
+.sidebar-close {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.sidebar-close:hover {
+  background-color: var(--sidebar-accent);
+  color: var(--sidebar-accent-foreground);
+}
+
+.top,
+.pages-nav,
+.projects-nav {
+  width: min(var(--sidebar-width), calc(100% - 20px));
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
+}
+
+.top {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 220px;
-  margin: 0px auto 0 auto;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--sidebar-border) ;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--sidebar-border);
 }
+
 .sidebar-highlight {
   margin: 0;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  font-weight: 5000;
+  color: var(--foreground);
 }
 
-.pages-nav {
-  height: auto;
-  width: 220px;
-  margin: 15px auto 0 auto;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--sidebar-border) ;
+.pages-nav,
+.projects-nav {
+  margin-top: var(--sidebar-section-gap);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--sidebar-border);
 }
-.pages-nav .sidebar-highlight{
-  justify-self: flex-start;
-  height: max-content;
+
+.pages-nav .sidebar-highlight,
+.projects-nav .sidebar-highlight {
   width: 100%;
-  padding-bottom: 4px;
+  padding-bottom: 6px;
 }
-.navigations{
+
+.navigations,
+.navigation {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
+  width: 100%;
   margin-top: 10px;
-  width: 100%;
-}
-.nav-link{
- border-radius: var(--radius);
- padding: 10px 5px;
- cursor: pointer;
-}
-.nav-link:hover{
-  background-color: var(--sidebar-accent);
-}
-.nav-link.active{
-  background-color: var(--sidebar-primary-foreground);
 }
 
-.projects-nav{
-  height: auto;
-  width: 220px;
-  margin: 15px auto 0 auto;
+.nav-link,
+.project-nav-link {
   display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--sidebar-border) ;
+  align-items: center;
+  gap: 8px;
+  min-height: var(--sidebar-item-height);
+  height: var(--sidebar-item-height);
+  padding: 0 10px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  line-height: 1;
+  color: var(--sidebar-foreground);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
-.projects-nav .sidebar-highlight{
-    justify-self: flex-start;
-  height: max-content;
-  width: 100%;
-  padding-bottom: 4px;
+
+.nav-link:hover,
+.project-nav-link:hover,
+.user-area:hover {
+  background-color: var(--sidebar-accent);
+  color: var(--sidebar-accent-foreground);
+}
+
+.nav-link.active,
+.project-nav-link.active {
+  background-color: var(--sidebar-primary);
+  color: var(--sidebar-primary-foreground);
 }
 
 .searchbar {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
-/* From Uiverse.io by LightAndy1 */
+
 .group {
   display: flex;
-  line-height: 28px;
   align-items: center;
   position: relative;
-  width: 220px;
+  width: 100%;
 }
 
 .input {
   font-family: var(--font-sans);
   width: 100%;
-  height: 25px;
+  height: 32px;
   padding-left: 2.5rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background-color: var(--input);
   outline: none;
   color: var(--sidebar-foreground);
-  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
-  cursor: text;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .input::placeholder {
@@ -115,60 +150,57 @@
   box-shadow: var(--shadow-sm);
 }
 
-.input:active {
-  transform: scale(0.95);
-}
-
 .input:focus {
+  border-color: var(--ring);
   outline: 2px solid var(--ring);
+  outline-offset: 1px;
 }
 
 .search-icon {
   position: absolute;
-  left: 1rem;
-  fill: var(--muted-foreground);
-  width: 1rem;
-  height: 1rem;
+  left: 0.9rem;
+  color: var(--muted-foreground);
   pointer-events: none;
   z-index: 1;
 }
-.project-nav-link{
- border-radius: var(--radius);
- padding: 10px 5px;
- cursor: pointer;
+
+.nav-link svg,
+.project-nav-link svg,
+.project-heading svg {
+  flex: 0 0 16px;
 }
-.project-nav-link:hover{
-    background-color: var(--sidebar-accent);
+
+.project-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.project-nav-link.active{
-  background-color: var(--sidebar-primary-foreground);
-}
-.add-new-btn{
-  background-color: var(--primary);
-  color: var(--primary-foreground);
-  transition: 0.1s ease;
+
+.add-new-btn {
   display: flex;
   justify-content: center;
-  padding: auto;
+  align-items: center;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
-.add-new-btn:hover{
-   background-color: var(--secondary);
+
+.add-new-btn:hover {
+  background-color: var(--secondary);
   color: var(--secondary-foreground);
 }
+
 .user-area {
   display: flex;
   align-items: center;
+  margin: auto;
   gap: 10px;
-  padding: 10px;
+  padding: 10px 12px;
   border-radius: var(--radius);
   cursor: pointer;
-  margin-top: auto;
-  width: 230px;
-  margin-bottom: 20px;
-}
-
-.user-area:hover {
-  background-color: var(--sidebar-accent);
+  width: min(var(--sidebar-width), calc(100% - 20px));
+  margin-bottom: 16px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .user-avatar {
@@ -180,23 +212,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 600;
   flex-shrink: 0;
 }
 
 .user-info {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .user-name {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--sidebar-foreground);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .user-sub {
-  font-size: 12px;
+  font-size: 0.72rem;
   color: var(--muted-foreground);
+}
+
+.user-area:hover .user-name,
+.user-area:hover .user-sub {
+  color: var(--sidebar-accent-foreground);
 }

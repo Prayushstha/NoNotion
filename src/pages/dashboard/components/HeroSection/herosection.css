@@ -12,6 +12,8 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 10px;
+  background-color: var(--card);
+  color: var(--card-foreground);
 }
 .cover-image {
   height: 10rem;
@@ -42,6 +44,8 @@
   justify-content: center;
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  background-color: var(--card);
+  color: var(--card-foreground);
 }
 h2 {
   margin: 0;

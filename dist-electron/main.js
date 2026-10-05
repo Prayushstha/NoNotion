@@ -1,23 +1,20 @@
-import { BrowserWindow, app } from "electron";
-import { fileURLToPath } from "url";
-import path from "path";
+import { BrowserWindow as e, app as t } from "electron";
+import { fileURLToPath as n } from "url";
+import r from "path";
 //#region electron/main.ts
-var __dirname = path.dirname(fileURLToPath(import.meta.url));
-function createWindow() {
-	const win = new BrowserWindow({
+var i = r.dirname(n(import.meta.url));
+function a() {
+	let t = new e({
 		width: 1200,
 		height: 800,
-		webPreferences: { preload: path.join(__dirname, "preload.js") }
+		webPreferences: { preload: r.join(i, "preload.js") }
 	});
-	if (process.env.VITE_DEV_SERVER_URL) win.loadURL(process.env.VITE_DEV_SERVER_URL);
-	else win.loadFile(path.join(__dirname, "../dist/index.html"));
+	process.env.VITE_DEV_SERVER_URL ? t.loadURL(process.env.VITE_DEV_SERVER_URL) : t.loadFile(r.join(i, "../dist/index.html"));
 }
-app.whenReady().then(createWindow);
-app.on("window-all-closed", () => {
-	if (process.platform !== "darwin") app.quit();
-});
-app.on("activate", () => {
-	if (BrowserWindow.getAllWindows().length === 0) createWindow();
+t.whenReady().then(a), t.on("window-all-closed", () => {
+	process.platform !== "darwin" && t.quit();
+}), t.on("activate", () => {
+	e.getAllWindows().length === 0 && a();
 });
 //#endregion
 export {};
