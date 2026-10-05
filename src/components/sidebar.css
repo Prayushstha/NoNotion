@@ -144,7 +144,16 @@
   background-color: var(--sidebar-primary-foreground);
 }
 .add-new-btn{
-  background-color: var(--input);
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  transition: 0.1s ease;
+  display: flex;
+  justify-content: center;
+  padding: auto;
+}
+.add-new-btn:hover{
+   background-color: var(--secondary);
+  color: var(--secondary-foreground);
 }
 .user-area {
   display: flex;
