@@ -5,9 +5,12 @@
   gap: 0.1rem;
 }
 .date-hero {
+  display: flex;
   color: var(--muted-foreground);
   font: var(--font-mono);
   font-size: 12px;
+  align-items: center;
+  gap: 5px;
 }
 .hero-card {
   display: flex;
@@ -49,11 +52,16 @@
   font-size: 15px;
   color: var(--secondary-foreground);
 }
+
 .link-to-habits a{
+    display: flex;
+  flex-direction: row;
+  align-items: center;
   color: var(--muted-foreground);
   font: var(--font-sans);
   font-size: 13px;
   transition: 0.3s ease;
+  gap: 5px;
 }
 .link-to-habits a:hover{
   color: var(--secondary-foreground);
