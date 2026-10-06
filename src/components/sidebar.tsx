@@ -18,6 +18,7 @@ import {
 import type { sidebar } from "../types";
 import { SidebarUserPopup } from "./sidebarUserPopup";
 import "./sidebar.css";
+import { useNavigate } from "react-router";
 
 export function SideBar({
   sidebar,
@@ -37,6 +38,9 @@ export function SideBar({
   const userPopupRef = useRef<HTMLDivElement>(null);
   const appearanceButtonRef = useRef<HTMLButtonElement>(null);
   const themePopupRef = useRef<HTMLDivElement>(null);
+
+  let sideNavigate = useNavigate();
+
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -84,7 +88,7 @@ export function SideBar({
         <div className="navigations">
           <div
             className={`nav-link ${activeLink === "Dashboard" ? "active" : ""}`}
-            onClick={() => setActiveLink("Dashboard")}
+            onClick={() => {setActiveLink("Dashboard"); sideNavigate("/")}}
             title="Dashboard"
           >
             <LayoutDashboard size={16} color="currentColor" />
@@ -92,7 +96,7 @@ export function SideBar({
           </div>
           <div
             className={`nav-link ${activeLink === "Habits" ? "active" : ""}`}
-            onClick={() => setActiveLink("Habits")}
+            onClick={() => {setActiveLink("Habits");sideNavigate("/habits")}}
             title="My Habits"
           >
             <CheckSquare size={16} color="currentColor" />
@@ -100,7 +104,7 @@ export function SideBar({
           </div>
           <div
             className={`nav-link ${activeLink === "Insights" ? "active" : ""}`}
-            onClick={() => setActiveLink("Insights")}
+            onClick={() => {setActiveLink("Insights");sideNavigate("/insights")}}
             title="Insights"
           >
             <BarChart2 size={16} color="currentColor" />
@@ -108,7 +112,7 @@ export function SideBar({
           </div>
           <div
             className={`nav-link ${activeLink === "Settings" ? "active" : ""}`}
-            onClick={() => setActiveLink("Settings")}
+            onClick={() => {setActiveLink("Settings");sideNavigate("/settings")}}
             title="Settings"
           >
             <Settings2 size={16} color="currentColor" />
