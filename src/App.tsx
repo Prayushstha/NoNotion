@@ -3,12 +3,11 @@ import { useState, useEffect } from "react";
 import { Dashboard } from "./pages/dashboard/dashboard";
 import { SideBar } from "./components/sidebar";
 import { Header } from "./components/header";
-import dayjs from "dayjs";
 function App() {
   const [theme, setTheme] = useState<boolean>(true);
   const [sidebar, setSidebar] = useState<boolean>(true);
-
-  const todaysDate = dayjs().format('dddd, MMM D YYYY' );
+  const [activeLink, setActiveLink] = useState<string | null>('Dashboard');
+  
   useEffect(() => {
     if (theme) {
       document.documentElement.setAttribute("data-theme", "dark");
@@ -20,9 +19,13 @@ function App() {
   return (
     <div className="main-container">
       <SideBar sidebar={sidebar} setSidebar={setSidebar} theme={theme}
-          setTheme={setTheme}/>
+          setTheme={setTheme}
+          activeLink={activeLink} 
+          setActiveLink={setActiveLink}
+          />
+          
       <div className="content-wrapper">
-        <Header todaysDate={todaysDate}/>
+        <Header  activeLink={activeLink} />
         <div className="main-content">
           <Dashboard />
         </div>

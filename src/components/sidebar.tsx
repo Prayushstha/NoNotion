@@ -1,4 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from "react";
 import {
   BarChart2,
   CheckSquare,
@@ -13,10 +19,19 @@ import type { sidebar } from "../types";
 import { SidebarUserPopup } from "./sidebarUserPopup";
 import "./sidebar.css";
 
-export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
+export function SideBar({
+  sidebar,
+  setSidebar,
+  theme,
+  setTheme,
+  activeLink,
+  setActiveLink,
+}: sidebar & {
+  activeLink: string | null;
+  setActiveLink: Dispatch<SetStateAction<string | null>>;
+}) {
   const [userSettings, setUserSettings] = useState(false);
   const [themePopup, setThemePopup] = useState(false);
-  const [activeLink, setActiveLink] = useState<string | null>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const userAreaRef = useRef<HTMLDivElement>(null);
   const userPopupRef = useRef<HTMLDivElement>(null);
@@ -68,32 +83,32 @@ export function SideBar({ sidebar, setSidebar, theme, setTheme }: sidebar) {
         <h3 className="sidebar-highlight">Pages</h3>
         <div className="navigations">
           <div
-            className={`nav-link ${activeLink === "dashboard" ? "active" : ""}`}
-            onClick={() => setActiveLink("dashboard")}
+            className={`nav-link ${activeLink === "Dashboard" ? "active" : ""}`}
+            onClick={() => setActiveLink("Dashboard")}
             title="Dashboard"
           >
             <LayoutDashboard size={16} color="currentColor" />
             <span className="nav-label">Dashboard</span>
           </div>
           <div
-            className={`nav-link ${activeLink === "habits" ? "active" : ""}`}
-            onClick={() => setActiveLink("habits")}
+            className={`nav-link ${activeLink === "Habits" ? "active" : ""}`}
+            onClick={() => setActiveLink("Habits")}
             title="My Habits"
           >
             <CheckSquare size={16} color="currentColor" />
             <span className="nav-label">My Habits</span>
           </div>
           <div
-            className={`nav-link ${activeLink === "insights" ? "active" : ""}`}
-            onClick={() => setActiveLink("insights")}
+            className={`nav-link ${activeLink === "Insights" ? "active" : ""}`}
+            onClick={() => setActiveLink("Insights")}
             title="Insights"
           >
             <BarChart2 size={16} color="currentColor" />
             <span className="nav-label">Insights</span>
           </div>
           <div
-            className={`nav-link ${activeLink === "settings" ? "active" : ""}`}
-            onClick={() => setActiveLink("settings")}
+            className={`nav-link ${activeLink === "Settings" ? "active" : ""}`}
+            onClick={() => setActiveLink("Settings")}
             title="Settings"
           >
             <Settings2 size={16} color="currentColor" />
