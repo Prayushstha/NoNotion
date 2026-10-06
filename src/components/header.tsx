@@ -1,17 +1,14 @@
 import "./header.css";
 import dayjs from "dayjs";
-export function Header({
-  activeLink
-}: {
-  activeLink: string | null;
-}) {
+
+export function Header({ activeLink }: { activeLink: string | null }) {
   const todaysDateDeader = dayjs().format("dddd, MMMM D YYYY");
 
   return (
     <header className="header">
       <div className="nav-info">
         <div className="title" id="nav-info title">
-          {'NoNotion'}
+          {"NoNotion"}
         </div>
         <div className="spacer">{" > "}</div>
         <div className="dashboard" id="nav-info dashboard">
