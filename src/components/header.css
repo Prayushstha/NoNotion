@@ -1,9 +1,9 @@
 .header {
   display: flex;
-  position: fixed;
   margin-top: 0;
-  padding-bottom: 5px;
   height: 30px;
+  flex-shrink: 0;
+  box-sizing: border-box;
   align-items: center;
   background-color: var(--background);
   color: var(--foreground);
@@ -23,12 +23,7 @@
   font-size: 12px;
   margin-left: 10px;
 }
-.header-right {
-  display: flex;
-  color: var(--foreground);
-  position: inherit;
-  left: 95%;
-}
+
 /* Sidebar Toggle */
 #checkbox {
   display: none;
@@ -90,4 +85,16 @@
   transition-duration: 0.5s;
   transform: rotate(180deg);
 }
-
+.header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 20px;
+  
+}
+.today-date-time{
+  color: var(--muted-foreground);
+  font: var(--font-mono);
+  font-size: 12px;
+}

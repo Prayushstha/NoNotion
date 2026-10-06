@@ -12,6 +12,7 @@
     "electron:build": "electron-builder"
   },
   "dependencies": {
+    "dayjs": "^1.11.23",
     "expo": "^57.0.26",
     "expo-constants": "~57.0.20",
     "expo-linking": "~57.0.11",
