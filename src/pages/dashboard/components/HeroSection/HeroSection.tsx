@@ -1,6 +1,6 @@
 import "./herosection.css";
 import dayjs from "dayjs";
-import {CalendarDays,ExternalLink} from 'lucide-react'
+import {CalendarDays,ExternalLink,ChartPie} from 'lucide-react'
 export function HeroSection() {
   const heroDate = dayjs().format("dddd, MMM D");
   return (
@@ -18,6 +18,10 @@ export function HeroSection() {
           <div className="link-to-habits">
             <a href="#">View your weekly habits <ExternalLink size={15}/></a>
           </div>
+        </div>
+        <div className="pie-chart-area">
+          <ChartPie size={150}/>
+          <div className="pie-chart-text">67%</div>
         </div>
       </div>
     </div>

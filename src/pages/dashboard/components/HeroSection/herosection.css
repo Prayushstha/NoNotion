@@ -54,7 +54,7 @@
 }
 
 .link-to-habits a{
-    display: flex;
+  display: flex;
   flex-direction: row;
   align-items: center;
   color: var(--muted-foreground);
@@ -65,4 +65,16 @@
 }
 .link-to-habits a:hover{
   color: var(--secondary-foreground);
+}
+.pie-chart-area{
+  margin-left: auto;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.pie-chart-text{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
