@@ -1,11 +1,13 @@
 .dashboard {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
   background-color: var(--background);
   color: var(--foreground);
 }
-.hero-section-container {
+.dashboard-main-container {
+   display: flex;
+  flex-direction: column;
+  gap: 2rem;
   width: 90%;
   align-self: center;
 }
