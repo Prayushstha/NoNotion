@@ -1,3 +1,4 @@
+import { BarChartSection } from "./components/BarSection/barsection";
 import { HeroSection } from "./components/HeroSection/HeroSection";
 import { StatsSection } from "./components/StatsSection/StatsSection";
 import { TasksSection } from "./components/TaskSection/TasksSection";
@@ -11,6 +12,9 @@ export function Dashboard() {
         </div>
         <div className="stats-section-container">
           <StatsSection />
+        </div>
+        <div className="bar-chart-container">
+          <BarChartSection />
         </div>
         <div className="main-dashboard-content">
           <TasksSection />
