@@ -1,6 +1,7 @@
 import "./herosection.css";
 import dayjs from "dayjs";
-import {CalendarDays,ExternalLink,ChartPie} from 'lucide-react'
+import { PieChart, Pie, Cell } from "recharts";
+import {CalendarDays,ExternalLink} from 'lucide-react'
 export function HeroSection() {
   const heroDate = dayjs().format("dddd, MMM D");
   return (
@@ -20,10 +21,41 @@ export function HeroSection() {
           </div>
         </div>
         <div className="pie-chart-area">
-          <ChartPie size={150}/>
-          <div className="pie-chart-text">67%</div>
+          <ProgressRing value={68}/>
         </div>
       </div>
+    </div>
+  );
+}
+
+ function ProgressRing({ value = 68 }: { value: number }) {
+  const data = [
+    { value: value },
+    { value: 100 - value },
+  ];
+
+  return (
+    <div className="progress-ring">
+      <div className="progress-ring-chart">
+        <PieChart width={120} height={120}>
+          <Pie
+            data={data}
+            cx={55}
+            cy={55}
+            innerRadius={40}
+            outerRadius={55}
+            startAngle={90}
+            endAngle={-270}
+            dataKey="value"
+            strokeWidth={0}
+          >
+            <Cell fill="var(--chart-1)" />
+            <Cell fill="var(--muted)" />
+          </Pie>
+        </PieChart>
+        <div className="progress-ring-label">{value}%</div>
+      </div>
+      <span className="progress-ring-sub">daily rhythm</span>
     </div>
   );
 }

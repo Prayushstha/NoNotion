@@ -1,5 +1,6 @@
 import "./barsection.css";
 import { BarChart, Bar, XAxis, Cell, ResponsiveContainer } from "recharts";
+
 import { Trophy } from "lucide-react";
 import './rythmsection.css'
 export function ChartSection() {
