@@ -2,20 +2,18 @@ import "./barsection.css";
 import { BarChart, Bar, XAxis, Cell, ResponsiveContainer } from "recharts";
 
 import { Trophy } from "lucide-react";
-import './rythmsection.css'
+import "./rythmsection.css";
 export function ChartSection() {
-
-
   return (
-<div className="rhythm-section">
+    <div className="rhythm-section">
       <BarChartSection />
       <RhythmSection />
     </div>
   );
 }
 
-function BarChartSection(){
-    const data = [
+function BarChartSection() {
+  const data = [
     { day: "M", value: 80 },
     { day: "T", value: 90 },
     { day: "W", value: 60 },
@@ -27,9 +25,10 @@ function BarChartSection(){
 
   const todayIndex = 3;
   const average = Math.round(
-    data.reduce((sum, d) => sum + d.value, 0) / data.length
+    data.reduce((sum, d) => sum + d.value, 0) / data.length,
   );
-  return <div className="bar-chart-container2">
+  return (
+    <div className="bar-chart-container2">
       <div className="bar-chart">
         <div className="bar-header">
           <p>Your rhythm</p>
@@ -67,25 +66,26 @@ function BarChartSection(){
         </div>
       </div>
     </div>
+  );
 }
 function RhythmSection() {
   return (
     <div className="milestone-card">
-        <div className="milestone-header">
-          <span>Next milestone</span>
-          <Trophy size={16} />
-        </div>
-        <div className="milestone-title">Two more days</div>
-        <div className="milestone-desc">
-          Reach a 14-day streak and unlock your steady hand badge.
-        </div>
-        <div className="milestone-progress">
-          <div className="milestone-bar">
-            <div className="milestone-bar-fill" style={{ width: "85%" }} />
-          </div>
-          <span className="milestone-label">12 of 14 days</span>
-        </div>
-        <button className="milestone-link">See all milestones</button>
+      <div className="milestone-header">
+        <span>Next milestone</span>
+        <Trophy size={16} />
       </div>
+      <div className="milestone-title">Two more days</div>
+      <div className="milestone-desc">
+        Reach a 14-day streak and unlock your steady hand badge.
+      </div>
+      <div className="milestone-progress">
+        <div className="milestone-bar">
+          <div className="milestone-bar-fill" style={{ width: "85%" }} />
+        </div>
+        <span className="milestone-label">12 of 14 days</span>
+      </div>
+      <button className="milestone-link">See all milestones</button>
+    </div>
   );
 }

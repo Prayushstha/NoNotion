@@ -39,7 +39,7 @@ export function SideBar({
   const appearanceButtonRef = useRef<HTMLButtonElement>(null);
   const themePopupRef = useRef<HTMLDivElement>(null);
 
-  let sideNavigate = useNavigate();
+  const sideNavigate = useNavigate();
 
 
   useEffect(() => {

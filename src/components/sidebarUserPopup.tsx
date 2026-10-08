@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/refs */
 import "./sidebaruserpopup.css";
 import { createPortal } from "react-dom";
 import type { ThemeProps } from "../types";

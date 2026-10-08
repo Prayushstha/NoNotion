@@ -13,9 +13,7 @@ export function Dashboard() {
         <div className="stats-section-container">
           <StatsSection />
         </div>
-
         <ChartSection />
-
         <div className="main-dashboard-content">
           <TasksSection />
         </div>
