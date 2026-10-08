@@ -10,6 +10,9 @@ Most habit and productivity apps either lock core features behind paywalls or co
 
 ---
 
+<img src="./public/dashboard.png" style="width: 400px; margin-left:auto;">
+
+
 ## Tech Stack
 
 | Layer     | Technology                   |
